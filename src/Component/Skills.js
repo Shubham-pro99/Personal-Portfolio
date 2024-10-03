@@ -1,64 +1,60 @@
-import { Carousel, Card, Button, Stack } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-//import ExampleCarouselImage from 'components/ExampleCarouselImage';
+// import meter1 from "../assets/img/meter1.svg";
+// import meter2 from "../assets/img/meter2.svg";
+// import meter3 from "../assets/img/meter3.svg";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import colorSharp from "../assets/img/color-sharp.png"
+import '../Component-Styles/skills.css'
 
-function Skills() {
-  const reviews = [
-    { _id: 1, text: "abc" },
-    { _id: 2, text: "def" },
-  ];
+const Skills = () => {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
 
   return (
-    <div>
-      <h1 className="text-center fw-bold my-5">My Skills ({reviews.length})</h1>
-      <div className="bg-dark bg-opacity-25 container-fluid">
-        <Carousel expand="lg"  style={{ height: 500 }}>
-          {reviews.map((review, index) => (
-            <Carousel.Item style={{ height: 500 }}>
-              <Stack
-                direction="horizontal"
-                className="h-100 justify-content-center align-items-center"
-                gap={3}
-              >
-                <Card ClassName="rounded" style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-                </Card>
-              </Stack>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </div>
-    </div>
-  );
+    <section className="skill">
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <div className="skill-bx wow zoomIn">
+                        <h2>Skills</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <Carousel responsive={responsive} infinite={true}>
+                            <div className="item">
+                                <img src={'#'} alt="Image" />
+                                <h5>Javascript</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'#'} alt="Image" />
+                                <h5>Html</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'#'} alt="Image" />
+                                <h5>Css</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'#'} alt="Image" />
+                                <h5>Bootstrap</h5>
+                            </div>
+                        </Carousel>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img className="background-image-left" src={colorSharp} alt="Image" />
+    </section>
+  )
 }
 
-export default Skills;
+export  default Skills

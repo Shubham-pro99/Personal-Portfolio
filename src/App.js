@@ -1,6 +1,7 @@
 import NavBar from './Component/NavBar';
 import Banner from './Component/Banner';
 import Skills from './Component/Skills';
+import Projects from './Component/Projects';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <NavBar/>
       <Banner/>
       <Skills/>
+      <Projects/> 
     </div>
   );
 }

@@ -5,6 +5,10 @@ import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 import "../Component-Styles/navbar.css";
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
+
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -33,13 +37,7 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link
-              href="#home"
-              className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("home")}
-            >
+            <Nav.Link href="#home" className={activeLink === "home" ? "active navbar-link" : "navbar-link"}onClick={() => onUpdateActiveLink("home")}>
               Home
             </Nav.Link>
             <Nav.Link
