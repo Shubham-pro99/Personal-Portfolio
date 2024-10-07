@@ -1,17 +1,19 @@
-// import { Col } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-// const ProjectCard = ({ title, description, imgUrl }) => {
-//   return (
-//     <Col size={12} sm={6} md={4}>
-//       <div className="proj-imgbx">
-//         <img src={imgUrl} />
-//         <div className="proj-txtx">
-//           <h4>{title}</h4>
-//           <span>{description}</span>
-//         </div>
-//       </div>
-//     </Col>
-//   )
-// }
+function Cards({ title, description, imgUrl }) {
+  return (
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={imgUrl} />
+      <Card.Body>
+              <Card.Title>{ title}</Card.Title>
+        <Card.Text>
+           {description}
+        </Card.Text>
+        <Button variant="primary">Go to the project</Button>
+      </Card.Body>
+    </Card>
+  );
+}
 
-// export default ProjectCard
+export default Cards;
